@@ -27,7 +27,7 @@ body {
     position: fixed;
     bottom: 0px;
     width: 100%;
-    height: 75px;
+    height: 65px;
     padding-top: 15px;
 }
 a{
@@ -250,4 +250,52 @@ a{
     background-color: rgb(15, 197, 15);
     border-radius: 50%;
     margin-top: -6px;
+}
+.controls{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-left: 125px;
+    padding-bottom: 30px;
+}
+.material-symbols-outlined{
+    margin-right: 10px;
+    opacity: 0.5;
+}
+.volume{
+    appearance: none;
+    border-radius: 100px;
+    height: 4px;
+    width:auto;
+}
+.volume::-webkit-slider-thumb{
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    background-color: rgb(15, 197, 15);
+    border-radius: 50%;
+    margin-top: -2px;
+}
+.material-symbols-outlined:hover{
+    opacity: 1;
+}
+.albumb{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items:start;
+
+}
+.kalla{
+    align-items: flex-start;
+}
+.song-name{
+    margin-left: 20px;
+    font-weight: 500;
+    padding-right: 50px;
+}
+.songinfo{
+    font-size: 12px;
+    font-weight: 300;
+    opacity: 0.6;
 }

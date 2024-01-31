@@ -316,4 +316,5 @@ a{
 .button-play:hover .play-btn{
     transition: 0.5s;
     opacity: 1;
+    cursor: pointer;
 }

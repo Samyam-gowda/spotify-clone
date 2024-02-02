@@ -318,3 +318,17 @@ a{
     opacity: 1;
     cursor: pointer;
 }
+@media (max-width:500px){
+    .sidebar{
+        margin-left:-380px;
+    }
+    .song-name{
+        opacity: 0;
+    }
+    .songinfo{
+        opacity: 0;
+    }
+    .player-controls{
+        margin-left: 40px;
+    }
+}

@@ -212,3 +212,35 @@ playBtn9.addEventListener("click", () => {
    songDesp.style.marginLeft = "20px"
 
 })
+
+let songTime = document.querySelector(".total-time")
+let currTime = document.querySelector(".current-time")
+
+// Add event listeners to track time update for each audio element
+aud1.addEventListener("timeupdate", updateProgressBar);
+aud2.addEventListener("timeupdate", updateProgressBar);
+aud3.addEventListener("timeupdate", updateProgressBar);
+aud4.addEventListener("timeupdate", updateProgressBar);
+aud5.addEventListener("timeupdate", updateProgressBar);
+aud6.addEventListener("timeupdate", updateProgressBar);
+aud7.addEventListener("timeupdate", updateProgressBar);
+aud8.addEventListener("timeupdate", updateProgressBar);
+aud9.addEventListener("timeupdate", updateProgressBar);
+
+// Function to update the playback bar
+function updateProgressBar() {
+    let audio = this; // "this" refers to the audio element that fired the event
+    let progressBar = document.querySelector(".progress-bar");
+    let currentTime = audio.currentTime;
+    let duration = audio.duration;
+    songTime.innerText = (duration/60).toFixed(2)
+    
+    
+    // Calculate the percentage of the song that has been played
+    let progress = (currentTime / duration) * 100;
+    currTime.innerText = (progress/60).toFixed(2)
+
+    
+    // Update the value of the progress bar
+    progressBar.value = progress;
+}

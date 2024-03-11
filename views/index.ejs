@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify-web</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/requirements/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <style>
+    #btn {
+      border-radius: 50px;
+    }
+  </style>
+
+  <body>
+    <div class="main">
+      <div class="sidebar">
+        <div class="nav">
+          <div class="logo">
+            <img
+              src="/requirements/logo.png"
+              style="margin: 0 15px 0 0; height: 2.5rem; width: 2.5rem"
+              class="logo"
+            />Spotify
+          </div>
+          <div class="nav-btn">
+            <i class="fa-solid fa-house"></i>
+            <a href="#">Home</a>
+          </div>
+          <div class="nav-btn" id="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="#">Search</a>
+          </div>
+        </div>
+
+        <div class="library">
+          <div class="options">
+            <div class="lib-options nav-btn">
+              <img src="/requirements/library_icon.png" alt="library" />
+              <a href="#"> Your Library</a>
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="lib-box">
+            <div class="box">
+              <p class="box-p1">Create your first playlist</p>
+              <p class="box-p2">it's easy well help</p>
+              <button class="badge">create playlist</button>
+            </div>
+            <div class="box-2">
+              <p class="box-p1">Let's find some playlists to follow</p>
+              <p class="box-p2">we'll keep you updated on new episodes</p>
+              <button class="badge">Browse podcasts</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="sticky-nav">
+          <div class="sticky-nav-items">
+            <img src="/requirements/backward_icon.png" alt="" />
+            <img src="/requirements/forward_icon.png" alt="" />
+          </div>
+          <div class="sticky-nav-options">
+            <button class="badge">Explore premium</button>
+            <button class="badge dark">
+              <i class="fa-regular fa-circle-down"></i> &nbsp; &nbsp;install app
+            </button>
+            <form method="GET" action="/spotify/login">
+              <button id="btn" class="fa-regular fa-user"></button>
+            </form>
+            <p>&nbsp;&nbsp;<%= name || 'Account' %></p>
+          </div>
+        </div>
+
+        <h2>Recently played</h2>
+        <div class="card-container">
+          <div class="card">
+            <img src="/requirements/card1img.jpeg" class="card-img" />
+            <p class="card-title">Top 50 global</p>
+            <p class="card-info">
+              your daily updates of the most played tracks
+            </p>
+          </div>
+        </div>
+
+        <h2>Trending now near you</h2>
+        <div class="card-container">
+          <div class="card kalaastar">
+            <div class="button-play">
+              <img src="/requirements/kalaastar.jpeg" class="card-img" />
+              <div class="pp1">
+                <img src="/requirements/player_icon3.png" class="play-btn" />
+              </div>
+            </div>
+            <p class="card-title">Kalaastar (From honeysingh 3.0)</p>
+            <p class="card-info">
+              Yo Yo Honeysingh, Rony Ajnali, Gill Machhrai
+            </p>
+          </div>
+          <div class="card kaatera">
+            <div class="button-play">
+              <img
+                src="/requirements/kaatera.jpg"
+                class="card-img"
+                style="height: 150px"
+              />
+              <div class="pp2">
+                <img src="/requirements/player_icon3.png" class="play-btn" />
+              </div>
+            </div>
+            <p class="card-title">Kaatera Theme song(from "Kaatera")</p>
+            <p class="card-info">Darshan,V,Harikrishna</p>
+          </div>
+          <div class="card fast9">
+            <div class="button-play">
+              <img src="/requirements/fast9.jpg" class="card-img" />
+              <div class="pp3">
+                <img src="/requirements/player_icon3.png" class="play-btn" />
+              </div>
+            </div>
+            <p class="card-title">Fast Lane (Fast9)</p>
+            <p class="card-info">Don Toliver, Lil Durk, Latto</p>
+          </div>
+          <div class="card ghost">
+            <div class="button-play">
+              <img
+                src="/requirements/ghost.jpg"
+                class="card-img"
+                style="height: 150px"
+              />
+              <div class="pp4">
+                <img src="/requirements/player_icon3.png" class="play-btn" />
+              </div>
+            </div>
+            <p class="card-title">OGM (from "Ghost")</p>
+            <p class="card-info">Aishwarya Ranjarajan MC Chethan, Jithin raj</p>
+          </div>
+          <div class="card pathaan">
+            <div class="button-play">
+              <img
+                src="/requirements/Pathaan.jpg"
+                class="card-img"
+                style="height: 150px"
+              />
+              <div class="pp5">
+                <img src="/requirements/player_icon3.png" class="play-btn" />
+              </div>
+            </div>
+            <p class="card-title">Besharam Rang (from "Pathaan")</p>
+            <p class="card-info">
+              Vishal-shekar, Shilpa Rao, Caralisa Monterio
+            </p>
+          </div>
+        </div>
+        <h2>Rap music</h2>
+        <div class="card-container">
+          <div class="card kannada">
+            <div class="button-play">
+              <img src="/requirements/rahuldito.jpeg" class="card-img" />
+              <div class="pp6">
+                <img src="/requirements/player_icon3.png" class="play-btn" />
+              </div>
+            </div>
+            <p class="card-title">Nanna Kannada</p>
+            <p class="card-info">Rahul Dit-O, MC Bijju</p>
+          </div>
+          <div class="card mcstan">
+            <div class="button-play">
+              <img src="/requirements/mcstan.png" class="card-img" />
+              <div class="pp7">
+                <img src="/requirements/player_icon3.png" class="play-btn" />
+              </div>
+            </div>
+            <p class="card-title">Basti Ka Hasti</p>
+            <p class="card-info">MC STAN</p>
+          </div>
+          <div class="card genda">
+            <div class="button-play">
+              <img src="/requirements/badshah.jpg" class="card-img" />
+              <div class="pp8">
+                <img src="/requirements/player_icon3.png" class="play-btn" />
+              </div>
+            </div>
+            <p class="card-title">Genda Phool( feat.Palyal Dev)</p>
+            <p class="card-info">Badshah, Payal Dev</p>
+          </div>
+          <div class="card honey">
+            <div class="button-play">
+              <img src="/requirements/honeysingh.jpg" class="card-img" />
+              <div class="pp9">
+                <img src="/requirements/player_icon3.png" class="play-btn" />
+              </div>
+            </div>
+            <p class="card-title">Desi Kalakaar</p>
+            <p class="card-info">Yo Yo Honey Singh</p>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="music-player">
+        <div class="albumb">
+          <div class="display">
+            <img src="" style="height: 50px; width: 50px" class="kalla" />
+          </div>
+          <div class="song-name"></div>
+          <div class="songinfo"></div>
+        </div>
+        <div class="player">
+          <div class="player-controls">
+            <img
+              src="/requirements/player_icon1.png"
+              class="player-control-icon"
+            />
+            <img
+              src="/requirements/player_icon2.png"
+              class="player-control-icon"
+            />
+            <img
+              src="/requirements/player_icon3.png"
+              class="player-control-icon"
+              style="opacity: 1; height: 2.25rem"
+            />
+            <img
+              src="/requirements/player_icon4.png"
+              class="player-control-icon"
+            />
+            <img
+              src="/requirements/player_icon5.png"
+              class="player-control-icon"
+            />
+          </div>
+
+          <div class="playback-bar">
+            <span class="current-time"></span>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              class="progress-bar"
+              step="1"
+            />
+            <span class="total-time"></span>
+          </div>
+        </div>
+        <div class="controls">
+          <span class="material-symbols-outlined"> slideshow </span>
+          <span class="material-symbols-outlined"> lyrics </span>
+          <span class="material-symbols-outlined"> queue_music </span>
+          <span class="material-symbols-outlined"> devices </span>
+          <span class="material-symbols-outlined"> volume_up </span>
+          <input type="range" min="0" max="100" step="10" class="volume" />
+        </div>
+      </div>
+    </div>
+    <script>
+      let aud1 = new Audio(
+        "songs/KALAASTAR - Full Video _ Honey 3.0 _ Yo Yo Honey Singh & Sonakshi Sinha _ Zee Music Originals (128 kbps).mp3"
+      );
+      let aud2 = new Audio(
+        "songs/KAATERA Theme Song Lyrical _ Darshan _ Aradhanaa _ Tharun _ Rockline Venkatesh _ V.Harikrishna (128 kbps).mp3"
+      );
+      let aud3 = new Audio(
+        "songs/Don Toliver, Lil Durk & Latto - Fast Lane (Official Audio) [from F9 - The Fast Saga] (128 kbps).mp3"
+      );
+      let aud4 = new Audio(
+        "songs/GHOST_ OGM _ Dr Shivarajkumar _ Anupam Kher _ Jayaram _ Prashant Narayanan _ Srini _ Sandesh (128 kbps).mp3"
+      );
+      let aud5 = new Audio(
+        "songs/Besharam Rang Song _ Pathaan _ Shah Rukh Khan, Deepika Padukone _ Vishal & Sheykhar _ Shilpa, Kumaar (128 kbps).mp3"
+      );
+      let aud6 = new Audio(
+        "songs/Rahul Dit-O _ Nanna Kannada _ Ft. MC Bijju _ Official Music Video (4K) _ Kannada Rap (128 kbps).mp3"
+      );
+      let aud7 = new Audio(
+        "songs/MC STAN - Basti Ka Hasti (Official Audio) _ INSAAN _ 2022 (128 kbps).mp3"
+      );
+      let aud8 = new Audio(
+        "songs/Badshah – Genda Phool _ Jacqueline Fernandez _ Payal Dev _ Hit Anthem of the Year 2021 (128 kbps).mp3"
+      );
+      let aud9 = new Audio(
+        "songs/Desi Kalakaar Full Song with LYRICS _ Yo Yo Honey Singh _ Sonakshi Sinha (128 kbps).mp3"
+      );
+
+      let songInfo = [
+        "Kalaastar (From Honey 3.0)",
+        'Kaatera Theme song(from "Kaatera")',
+        "Fast Lane (Fast9)",
+        ' OGM  (from "Ghost")',
+        'Besharam Rang (from "Pathaan")',
+        "Nanna Kannada",
+        "Basti Ka Hasti",
+        "Genda Phool( feat.Palyal Dev)",
+        "Desi Kalakaar",
+      ];
+      let songDesc = [
+        "Yo Yo Honeysingh, Rony Ajnali, Gill Machhrai",
+        "Darshan,V,Harikrishna",
+        "Don Toliver, Lil Durk, Latto",
+        "Aishwarya Ranjarajan MC Chethan, Jithin raj",
+        "Vishal-shekar, Shilpa Rao, Caralisa Monterio",
+        "Rahul Dit-O, MC Bijju",
+        "MC STAN",
+        "Badshah, Payal Dev",
+        "Yo Yo Honey Singh",
+      ];
+
+      let img1 = document.querySelector(".kalla");
+      let songName = document.querySelector(".song-name");
+      let songDesp = document.querySelector(".songinfo");
+
+      let playBtn1 = document.querySelector(".pp1");
+      playBtn1.addEventListener("click", () => {
+        aud1.play();
+        playBtn1.addEventListener("dblclick", () => {
+          aud1.pause();
+        });
+        aud2.pause();
+        aud3.pause();
+        aud4.pause();
+        aud5.pause();
+        aud6.pause();
+        aud7.pause();
+        aud8.pause();
+        aud9.pause();
+        img1.src = "requirements/kalaastar.jpeg";
+        img1.style.opacity = 1;
+        songName.innerText = songInfo[0];
+        songDesp.innerText = songDesc[0];
+        songDesp.style.marginLeft = "0px";
+      });
+
+      let playBtn2 = document.querySelector(".pp2");
+      playBtn2.addEventListener("click", () => {
+        aud2.play();
+        playBtn2.addEventListener("dblclick", () => {
+          aud2.pause();
+        });
+        aud1.pause();
+        aud3.pause();
+        aud4.pause();
+        aud5.pause();
+        aud6.pause();
+        aud7.pause();
+        aud8.pause();
+        aud9.pause();
+        img1.src = "requirements/kaatera.jpg";
+        img1.style.opacity = 1;
+        songName.innerText = songInfo[1];
+        songDesp.innerText = songDesc[1];
+        songDesp.style.marginLeft = "55px";
+      });
+
+      let playBtn3 = document.querySelector(".pp3");
+      playBtn3.addEventListener("click", () => {
+        aud3.play();
+        playBtn3.addEventListener("dblclick", () => {
+          aud3.pause();
+        });
+        aud2.pause();
+        aud1.pause();
+        aud4.pause();
+        aud5.pause();
+        aud6.pause();
+        aud7.pause();
+        aud8.pause();
+        aud9.pause();
+        img1.src = "requirements/fast9.jpg";
+        img1.style.opacity = 1;
+        songName.innerText = songInfo[2];
+        songDesp.innerText = songDesc[2];
+        songDesp.style.marginLeft = "5px";
+      });
+
+      let playBtn4 = document.querySelector(".pp4");
+      playBtn4.addEventListener("click", () => {
+        aud4.play();
+        playBtn4.addEventListener("dblclick", () => {
+          aud4.pause();
+        });
+        aud2.pause();
+        aud1.pause();
+        aud3.pause();
+        aud5.pause();
+        aud6.pause();
+        aud7.pause();
+        aud8.pause();
+        aud9.pause();
+        img1.src = "requirements/ghost.jpg";
+        img1.style.opacity = 1;
+        songName.innerText = songInfo[3];
+        songDesp.innerText = songDesc[3];
+        songDesp.style.marginLeft = "5px";
+      });
+
+      let playBtn5 = document.querySelector(".pp5");
+      playBtn5.addEventListener("click", () => {
+        aud5.play();
+        playBtn5.addEventListener("dblclick", () => {
+          aud5.pause();
+        });
+        aud2.pause();
+        aud1.pause();
+        aud3.pause();
+        aud4.pause();
+        aud6.pause();
+        aud7.pause();
+        aud8.pause();
+        aud9.pause();
+        img1.src = "requirements/Pathaan.jpg";
+        img1.style.opacity = 1;
+        songName.innerText = songInfo[4];
+        songDesp.innerText = songDesc[4];
+        songDesp.style.marginLeft = "5px";
+      });
+
+      let playBtn6 = document.querySelector(".pp6");
+      playBtn6.addEventListener("click", () => {
+        aud6.play();
+        playBtn6.addEventListener("dblclick", () => {
+          aud6.pause();
+        });
+        aud2.pause();
+        aud1.pause();
+        aud3.pause();
+        aud4.pause();
+        aud5.pause();
+        aud7.pause();
+        aud8.pause();
+        aud9.pause();
+        img1.src = "requirements/rahuldito.jpeg";
+        img1.style.opacity = 1;
+        songName.innerText = songInfo[5];
+        songDesp.innerText = songDesc[5];
+        songDesp.style.marginLeft = "20px";
+      });
+
+      let playBtn7 = document.querySelector(".pp7");
+      playBtn7.addEventListener("click", () => {
+        aud7.play();
+        playBtn7.addEventListener("dblclick", () => {
+          aud7.pause();
+        });
+        aud2.pause();
+        aud1.pause();
+        aud3.pause();
+        aud4.pause();
+        aud5.pause();
+        aud6.pause();
+        aud8.pause();
+        aud9.pause();
+        img1.src = "requirements/mcstan.png";
+        img1.style.opacity = 1;
+        songName.innerText = songInfo[6];
+        songDesp.innerText = songDesc[6];
+        songDesp.style.marginLeft = "30px";
+      });
+
+      let playBtn8 = document.querySelector(".pp8");
+      playBtn8.addEventListener("click", () => {
+        aud8.play();
+        playBtn8.addEventListener("dblclick", () => {
+          aud8.pause();
+        });
+        aud2.pause();
+        aud1.pause();
+        aud3.pause();
+        aud4.pause();
+        aud5.pause();
+        aud6.pause();
+        aud7.pause();
+        aud9.pause();
+        img1.src = "requirements/badshah.jpg";
+        img1.style.opacity = 1;
+        songName.innerText = songInfo[7];
+        songDesp.innerText = songDesc[7];
+        songDesp.style.marginLeft = "20px";
+      });
+
+      let playBtn9 = document.querySelector(".pp9");
+      playBtn9.addEventListener("click", () => {
+        aud9.play();
+        playBtn9.addEventListener("dblclick", () => {
+          aud9.pause();
+        });
+        aud2.pause();
+        aud1.pause();
+        aud3.pause();
+        aud4.pause();
+        aud5.pause();
+        aud6.pause();
+        aud7.pause();
+        aud8.pause();
+        img1.src = "requirements/honeysingh.jpg";
+        img1.style.opacity = 1;
+        songName.innerText = songInfo[8];
+        songDesp.innerText = songDesc[8];
+        songDesp.style.marginLeft = "20px";
+      });
+
+      let songTime = document.querySelector(".total-time");
+      let currTime = document.querySelector(".current-time");
+
+      // Add event listeners to track time update for each audio element
+      aud1.addEventListener("timeupdate", updateProgressBar);
+      aud2.addEventListener("timeupdate", updateProgressBar);
+      aud3.addEventListener("timeupdate", updateProgressBar);
+      aud4.addEventListener("timeupdate", updateProgressBar);
+      aud5.addEventListener("timeupdate", updateProgressBar);
+      aud6.addEventListener("timeupdate", updateProgressBar);
+      aud7.addEventListener("timeupdate", updateProgressBar);
+      aud8.addEventListener("timeupdate", updateProgressBar);
+      aud9.addEventListener("timeupdate", updateProgressBar);
+
+      // Function to update the playback bar
+      function updateProgressBar() {
+        let audio = this; // "this" refers to the audio element that fired the event
+        let progressBar = document.querySelector(".progress-bar");
+        let currentTime = audio.currentTime;
+        let duration = audio.duration;
+        songTime.innerText = (duration / 60).toFixed(2);
+
+        // Calculate the percentage of the song that has been played
+        let progress = (currentTime / duration) * 100;
+        currTime.innerText = (progress / 60).toFixed(2);
+
+        // Update the value of the progress bar
+        progressBar.value = progress;
+      }
+    </script>
+  </body>
+</html>

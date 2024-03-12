@@ -6,20 +6,78 @@
     <title>Login</title>
     <link rel="stylesheet" href="login.css" /> <!-- Check styling -->
   </head>
+  <style>
+    body{
+      background-image: url("/requirements/Black-Music-HD-Wallpapers.png");
+      background-size: cover;
+    }
+    .icon{
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    img{
+      height: 100px;
+      width: 100px;
+      margin-right: 25px;
+    }
+    b{
+      color: white;
+      font-size: 45px;
+    }
+    input{
+      margin-left: 100px;
+      margin-bottom: 25px;
+      margin-top: 20px;
+
+    }
+    .login{
+      margin-left: 150px;
+      background-color: rgba(250, 235, 215, 0.121);
+      width: 400px;
+      border-radius: 10px;
+      padding: 5px;
+     
+    }
+    .text{
+      color: white;
+      font-size: 19px;
+      font-weight: 600;
+    }
+    button{
+      margin-top: 30px;
+      margin-left: 450px;
+      color: white;
+      background-color: rgb(33, 191, 33);
+      font-size: 25px;
+      font-weight: 700;
+      border-radius: 11px;
+      padding: 5px;
+      transition: 0.5s;
+    }
+    button:hover{
+      box-shadow: 5px 5px 10px white;
+    }
+  </style>
   <body>
     <DIV class="back-img">
     <div class="login-container">
       <form method="POST" action="/home">
         <br>
-        <input class="input" type="text" name="name" placeholder="User Name" required />
-        <input
+        <div class="icon">
+          <img src="/requirements/logo.png" alt=""><b>Spotify</b>
+        </div>
+        <div class="login">
+        <span class="text">USERNAME </span><input class="input" type="text" name="name" placeholder="User Name" required /><br>
+        <span class="text">PASSWORD</span> <input
           type="password"
           name="password"
           placeholder="Password"
           required
         />
+      </div>
         <form method="GET" action="/home">
-        <button class="btn" type="submit">Submit</button>
+        <button class="btn" type="submit">LOGIN</button>
         </form>
       </form>
     </div>
